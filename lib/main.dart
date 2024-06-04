@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tugas_dua/ui/login.dart';
+import 'package:tugas_dua/ui/homepage.dart';
 import 'package:tugas_dua/utility/my_colors.dart';
 
 void main() {
@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Product Inventory App',
-      home: const Login(),
+      home: const Homepage(),
       theme: ThemeData(useMaterial3: true).copyWith(
         cardTheme: const CardTheme().copyWith(
           shape: RoundedRectangleBorder(
