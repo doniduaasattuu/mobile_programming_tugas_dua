@@ -66,6 +66,10 @@ flutter:
     - assets/images/gr_yaris.png
     - assets/images/alphard.png
     - assets/images/xl7.png
+    - assets/images/urus.png
+    - assets/images/type_r.png
+    - assets/images/aventador.png
+    - assets/images/chiron.png
   # - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 

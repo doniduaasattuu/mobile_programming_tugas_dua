@@ -11,7 +11,8 @@ List<Car> carsData = [
     transmission: Transmission.automatic,
     seat: '5 seater',
     speed: '80 - 150 Km/H',
-    capacity: '1500 kWh',
+    engine: '1500 kWh',
+    baggage: '52L',
   ),
   const Car(
     brand: 'Hyundai',
@@ -23,7 +24,8 @@ List<Car> carsData = [
     transmission: Transmission.automatic,
     seat: '5 seater',
     speed: '80 - 150 Km/H',
-    capacity: '1500 kWh',
+    engine: '1500 kWh',
+    baggage: '52L',
   ),
   const Car(
     brand: 'Toyota',
@@ -35,7 +37,8 @@ List<Car> carsData = [
     transmission: Transmission.manual,
     seat: '7 seater',
     speed: '80 - 150 Km/H',
-    capacity: '1500 cc',
+    engine: '1500 cc',
+    baggage: '52L',
   ),
   const Car(
     brand: 'Toyota',
@@ -47,7 +50,8 @@ List<Car> carsData = [
     transmission: Transmission.manual,
     seat: '5 seater',
     speed: '80 - 150 Km/H',
-    capacity: '1500 cc',
+    engine: '1500 cc',
+    baggage: '52L',
   ),
   const Car(
     brand: 'Toyota',
@@ -59,7 +63,8 @@ List<Car> carsData = [
     transmission: Transmission.manual,
     seat: '7 seater',
     speed: '80 - 150 Km/H',
-    capacity: '1500 cc',
+    engine: '1500 cc',
+    baggage: '52L',
   ),
   const Car(
     brand: 'Suzuki',
@@ -71,6 +76,7 @@ List<Car> carsData = [
     transmission: Transmission.manual,
     seat: '7 seater',
     speed: '80 - 150 Km/H',
-    capacity: '1500 cc',
+    engine: '1500 cc',
+    baggage: '52L',
   ),
 ];

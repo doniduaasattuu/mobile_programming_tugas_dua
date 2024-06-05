@@ -14,7 +14,8 @@ class Car {
     required this.transmission,
     required this.speed,
     required this.seat,
-    required this.capacity,
+    required this.engine,
+    required this.baggage,
   });
 
   final String brand;
@@ -26,5 +27,6 @@ class Car {
   final Transmission transmission;
   final String speed;
   final String seat;
-  final String capacity;
+  final String engine;
+  final String baggage;
 }

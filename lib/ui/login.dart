@@ -54,12 +54,14 @@ class _LoginState extends State<Login> {
                     );
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: MyColors().success,
+                    backgroundColor: MyColors().info,
                   ),
                   child: Text(
                     'Login',
                     style: TextStyle(
                       color: MyColors().light,
+                      fontWeight: FontWeight.w600,
+                      fontSize: 16,
                     ),
                   ),
                 ),

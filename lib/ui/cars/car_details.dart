@@ -13,6 +13,73 @@ class CarDetails extends StatefulWidget {
 }
 
 class _CarDetailsState extends State<CarDetails> {
+  _openBookCarOverlay() {
+    showModalBottomSheet(
+      context: context,
+      builder: (ctx) => Padding(
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          children: [
+            // const Text('Book Car'),
+            const Icon(Icons.drag_handle_rounded),
+            TextField(
+              onTap: () {
+                DateTime now = DateTime.now();
+                showDatePicker(context: context, firstDate: now, lastDate: now);
+              },
+              decoration: const InputDecoration(
+                label: Text('Pickup date'),
+                suffixIcon: Icon(Icons.calendar_month),
+              ),
+            ),
+            const SizedBox(height: 20),
+            TextField(
+              onTap: () {
+                DateTime now = DateTime.now();
+                showDatePicker(context: context, firstDate: now, lastDate: now);
+              },
+              decoration: const InputDecoration(
+                label: Text('Pickup date'),
+                suffixIcon: Icon(Icons.calendar_month),
+              ),
+            ),
+            const SizedBox(height: 30),
+            TextField(
+              onTap: () {
+                DateTime now = DateTime.now();
+                showDatePicker(context: context, firstDate: now, lastDate: now);
+              },
+              decoration: const InputDecoration(
+                label: Text('Payment method'),
+              ),
+            ),
+            const SizedBox(height: 30),
+            SizedBox(
+              width: double.infinity,
+              child: ElevatedButton(
+                onPressed: () {},
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: MyColors().twitter,
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(10),
+                  child: Text(
+                    'Confirm',
+                    style: TextStyle(
+                      color: MyColors().light,
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final Car car = widget.car;
@@ -23,14 +90,11 @@ class _CarDetailsState extends State<CarDetails> {
         centerTitle: true,
         title: Text(
           '${car.brand} - ${car.name}',
-          style: TextStyle(
-            color: MyColors().tertiary,
+          style: const TextStyle(
             fontWeight: FontWeight.w600,
           ),
         ),
-        leading: BackButton(
-          color: MyColors().secondary,
-        ),
+        leading: const BackButton(),
       ),
       body: MyContainer(
         child: Column(
@@ -46,17 +110,17 @@ class _CarDetailsState extends State<CarDetails> {
               ),
             ),
             const SizedBox(height: 20),
-            const SizedBox(height: 20),
+            // const Text('Specification'),
             const Divider(),
-            Column(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(10),
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      // LEFT
-                      Column(
+            SingleChildScrollView(
+              child: Padding(
+                padding: const EdgeInsets.all(10),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    // LEFT
+                    Expanded(
+                      child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Row(
@@ -82,21 +146,23 @@ class _CarDetailsState extends State<CarDetails> {
                                       Icons.battery_charging_full_sharp,
                                     ),
                                     const SizedBox(width: 10),
-                                    Text(car.capacity),
+                                    Text(car.engine),
                                   ]
                                 : [
                                     const Icon(
                                       Icons.local_gas_station_outlined,
                                     ),
                                     const SizedBox(width: 10),
-                                    Text(car.capacity),
+                                    Text(car.engine),
                                   ],
                           ),
                         ],
                       ),
-                      const Spacer(),
-                      // RIGHT
-                      Column(
+                    ),
+                    // const Spacer(),
+                    // RIGHT
+                    Expanded(
+                      child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Row(
@@ -114,15 +180,22 @@ class _CarDetailsState extends State<CarDetails> {
                               Text(car.seat),
                             ],
                           ),
+                          const SizedBox(height: 15),
+                          Row(
+                            children: [
+                              const Icon(Icons.work_outline_rounded),
+                              const SizedBox(width: 10),
+                              Text(car.baggage),
+                            ],
+                          ),
                         ],
                       ),
-                    ],
-                  ),
-                )
-              ],
+                    ),
+                  ],
+                ),
+              ),
             ),
             const SizedBox(height: 20),
-            const Expanded(child: Column()),
             const Text(
               'Description',
               style: TextStyle(
@@ -132,22 +205,116 @@ class _CarDetailsState extends State<CarDetails> {
             ),
             const SizedBox(height: 8),
             const Text(
-                'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras nec lacinia leo. Vestibulum varius, metus nec semper mollis, enim eros sagittis turpis, quis auctor lacus erat a lectus. Nunc dignissim auctor ligula eu rhoncus. In hac habitasse platea dictumst.'),
+              'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras nec lacinia leo. Vestibulum varius, metus nec semper mollis, enim eros sagittis turpis, quis auctor lacus erat a lectus. Nunc dignissim auctor ligula eu rhoncus.',
+            ),
+            const SizedBox(height: 8),
+            const Divider(),
+            const SizedBox(height: 8),
+            const Text(
+              'Recommended for you',
+              style: TextStyle(
+                fontWeight: FontWeight.w600,
+                fontSize: 18,
+              ),
+            ),
+            const SizedBox(height: 8),
+            Expanded(
+              child: ListView(
+                scrollDirection: Axis.horizontal,
+                children: [
+                  Card(
+                    // surfaceTintColor: MyColors().twotter,
+                    surfaceTintColor: Colors.orange,
+                    child: Padding(
+                      padding: const EdgeInsets.all(8),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Image.asset(
+                            'assets/images/urus.png',
+                            width: 150,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  const SizedBox(width: 8),
+                  Card(
+                    // surfaceTintColor: MyColors().twotter,
+                    surfaceTintColor: Colors.orange,
+                    child: Padding(
+                      padding: const EdgeInsets.all(8),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Image.asset(
+                            'assets/images/aventador.png',
+                            width: 150,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  const SizedBox(width: 8),
+                  Card(
+                    // surfaceTintColor: MyColors().twotter,
+                    surfaceTintColor: Colors.orange,
+                    child: Padding(
+                      padding: const EdgeInsets.all(8),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Image.asset(
+                            'assets/images/type_r.png',
+                            width: 150,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  const SizedBox(width: 8),
+                  Card(
+                    // surfaceTintColor: MyColors().twotter,
+                    surfaceTintColor: Colors.orange,
+                    child: Padding(
+                      padding: const EdgeInsets.all(8),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Image.asset(
+                            'assets/images/chiron.png',
+                            width: 150,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  const SizedBox(width: 8),
+                ],
+              ),
+            ),
             const SizedBox(height: 24),
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  _openBookCarOverlay();
+                },
                 style: ElevatedButton.styleFrom(
-                    backgroundColor: MyColors().twitter),
+                  backgroundColor: MyColors().twitter,
+                ),
                 child: Padding(
                   padding: const EdgeInsets.all(10),
                   child: Text(
-                    'Confirm Now',
+                    'Book Now',
                     style: TextStyle(
                       color: MyColors().light,
                       fontSize: 16,
-                      fontWeight: FontWeight.w600,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
                 ),
