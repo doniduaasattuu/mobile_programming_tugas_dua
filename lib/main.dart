@@ -16,14 +16,15 @@ class MyApp extends StatelessWidget {
       title: 'Product Inventory App',
       home: const Homepage(),
       theme: ThemeData(useMaterial3: true).copyWith(
-        cardTheme: const CardTheme().copyWith(
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(10),
-            side: BorderSide(color: MyColors().tertiary),
-          ),
-          margin: const EdgeInsets.symmetric(horizontal: 0, vertical: 4),
-        ),
-      ),
+          scaffoldBackgroundColor: Colors.grey.shade50,
+          colorScheme: ColorScheme.fromSeed(seedColor: MyColors().twitter)),
+      // cardTheme: const CardTheme().copyWith(
+      //   shape: RoundedRectangleBorder(
+      //     borderRadius: BorderRadius.circular(16),
+      //     side: BorderSide(color: MyColors().danger),
+      //   ),
+      //   margin: const EdgeInsets.symmetric(horizontal: 0, vertical: 4),
+      // ),
     );
   }
 }

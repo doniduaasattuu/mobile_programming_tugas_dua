@@ -17,6 +17,6 @@ class MyColors {
   Color indigo = const Color.fromARGB(255, 102, 16, 242);
 
   Color twitter = const Color.fromARGB(255, 29, 161, 242);
-  Color lighgreen = const Color.fromARGB(255, 138, 201, 38);
-  Color lghtteal = const Color.fromARGB(255, 46, 196, 182);
+  Color lightgreen = const Color.fromARGB(255, 138, 201, 38);
+  Color lightteal = const Color.fromARGB(255, 46, 196, 182);
 }

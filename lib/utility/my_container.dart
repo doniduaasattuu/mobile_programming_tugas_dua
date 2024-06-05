@@ -10,7 +10,7 @@ class MyContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        padding: const EdgeInsets.fromLTRB(18, 36, 18, 18),
+        padding: const EdgeInsets.fromLTRB(16, 36, 16, 24),
         child: child,
       ),
     );
