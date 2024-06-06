@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:tugas_dua/data/cars_class_data.dart';
 import 'package:tugas_dua/data/cars_data.dart';
 import 'package:tugas_dua/ui/cars/cars_list.dart';
-import 'package:tugas_dua/ui/cars_class.dart';
+import 'package:tugas_dua/ui/cars/cars_class.dart';
 import 'package:tugas_dua/utility/my_colors.dart';
 import 'package:tugas_dua/utility/my_container.dart';
 

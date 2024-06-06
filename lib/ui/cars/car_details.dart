@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:tugas_dua/data/cars_recommended.dart';
 import 'package:tugas_dua/models/car.dart';
+import 'package:tugas_dua/ui/cars/recommended_car.dart';
 import 'package:tugas_dua/utility/my_colors.dart';
 import 'package:tugas_dua/utility/my_container.dart';
 
@@ -17,7 +19,7 @@ class _CarDetailsState extends State<CarDetails> {
     showModalBottomSheet(
       context: context,
       builder: (ctx) => Padding(
-        padding: const EdgeInsets.all(16),
+        padding: const EdgeInsets.fromLTRB(16, 8, 16, 16),
         child: Column(
           children: [
             // const Text('Book Car'),
@@ -102,7 +104,7 @@ class _CarDetailsState extends State<CarDetails> {
           children: [
             Center(
               child: SizedBox(
-                width: 350,
+                width: 300,
                 child: Image.asset(
                   car.image,
                   fit: BoxFit.fitWidth,
@@ -219,83 +221,7 @@ class _CarDetailsState extends State<CarDetails> {
             ),
             const SizedBox(height: 8),
             Expanded(
-              child: ListView(
-                scrollDirection: Axis.horizontal,
-                children: [
-                  Card(
-                    // surfaceTintColor: MyColors().twotter,
-                    surfaceTintColor: Colors.orange,
-                    child: Padding(
-                      padding: const EdgeInsets.all(8),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Image.asset(
-                            'assets/images/urus.png',
-                            width: 150,
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                  const SizedBox(width: 8),
-                  Card(
-                    // surfaceTintColor: MyColors().twotter,
-                    surfaceTintColor: Colors.orange,
-                    child: Padding(
-                      padding: const EdgeInsets.all(8),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Image.asset(
-                            'assets/images/aventador.png',
-                            width: 150,
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                  const SizedBox(width: 8),
-                  Card(
-                    // surfaceTintColor: MyColors().twotter,
-                    surfaceTintColor: Colors.orange,
-                    child: Padding(
-                      padding: const EdgeInsets.all(8),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Image.asset(
-                            'assets/images/type_r.png',
-                            width: 150,
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                  const SizedBox(width: 8),
-                  Card(
-                    // surfaceTintColor: MyColors().twotter,
-                    surfaceTintColor: Colors.orange,
-                    child: Padding(
-                      padding: const EdgeInsets.all(8),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Image.asset(
-                            'assets/images/chiron.png',
-                            width: 150,
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                  const SizedBox(width: 8),
-                ],
-              ),
+              child: RecommendedCar(recommendedCar: carRecommended),
             ),
             const SizedBox(height: 24),
             SizedBox(
