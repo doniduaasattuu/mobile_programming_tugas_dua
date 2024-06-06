@@ -197,55 +197,62 @@ class _CarDetailsState extends State<CarDetails> {
                 ),
               ),
             ),
-            const SizedBox(height: 20),
-            const Text(
-              'Description',
-              style: TextStyle(
-                fontWeight: FontWeight.w600,
-                fontSize: 18,
-              ),
-            ),
-            const SizedBox(height: 8),
-            const Text(
-              'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras nec lacinia leo. Vestibulum varius, metus nec semper mollis, enim eros sagittis turpis, quis auctor lacus erat a lectus. Nunc dignissim auctor ligula eu rhoncus.',
-            ),
-            const SizedBox(height: 8),
-            const Divider(),
-            const SizedBox(height: 8),
-            const Text(
-              'Recommended for you',
-              style: TextStyle(
-                fontWeight: FontWeight.w600,
-                fontSize: 18,
-              ),
-            ),
-            const SizedBox(height: 8),
             Expanded(
-              child: RecommendedCar(recommendedCar: carRecommended),
-            ),
-            const SizedBox(height: 24),
-            SizedBox(
-              width: double.infinity,
-              child: ElevatedButton(
-                onPressed: () {
-                  _openBookCarOverlay();
-                },
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: MyColors().twitter,
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.all(10),
-                  child: Text(
-                    'Book Now',
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const SizedBox(height: 20),
+                  const Text(
+                    'Description',
                     style: TextStyle(
-                      color: MyColors().light,
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
+                      fontWeight: FontWeight.w600,
+                      fontSize: 18,
                     ),
                   ),
-                ),
+                  const SizedBox(height: 8),
+                  const Text(
+                    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras nec lacinia leo. Vestibulum varius, metus nec semper mollis, enim eros sagittis turpis, quis auctor lacus erat a lectus. Nunc dignissim auctor ligula eu rhoncus.',
+                  ),
+                  const SizedBox(height: 8),
+                  const Divider(),
+                  const SizedBox(height: 8),
+                  const Text(
+                    'Recommended for you',
+                    style: TextStyle(
+                      fontWeight: FontWeight.w600,
+                      fontSize: 18,
+                    ),
+                  ),
+                  const SizedBox(height: 8),
+                  Expanded(
+                    child: RecommendedCar(recommendedCar: carRecommended),
+                  ),
+                  const SizedBox(height: 24),
+                  SizedBox(
+                    width: double.infinity,
+                    child: ElevatedButton(
+                      onPressed: () {
+                        _openBookCarOverlay();
+                      },
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: MyColors().twitter,
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(10),
+                        child: Text(
+                          'Book Now',
+                          style: TextStyle(
+                            color: MyColors().light,
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
               ),
-            ),
+            )
           ],
         ),
       ),

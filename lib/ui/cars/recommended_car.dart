@@ -22,7 +22,7 @@ class _RecommendedCar extends State<RecommendedCar> {
       itemBuilder: (ctx, index) => Card(
         surfaceTintColor: Colors.orange,
         child: Padding(
-          padding: const EdgeInsets.all(8),
+          padding: const EdgeInsets.all(16),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.end,
@@ -31,7 +31,7 @@ class _RecommendedCar extends State<RecommendedCar> {
                 recommendedCar[index].image,
                 width: 130,
               ),
-              const SizedBox(height: 10),
+              const SizedBox(height: 16),
               Text(recommendedCar[index].name),
             ],
           ),
