@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:tugas_dua/data/cars_recommended.dart';
 import 'package:tugas_dua/models/car.dart';
+import 'package:tugas_dua/services/recommeded_service.dart';
 import 'package:tugas_dua/ui/cars/recommended_car.dart';
+import 'package:tugas_dua/ui/homepage.dart';
 import 'package:tugas_dua/utility/my_colors.dart';
 import 'package:tugas_dua/utility/my_container.dart';
 
@@ -90,6 +91,19 @@ class _CarDetailsState extends State<CarDetails> {
       appBar: AppBar(
         backgroundColor: MyColors().light,
         centerTitle: true,
+        actions: [
+          IconButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const Homepage(),
+                ),
+              );
+            },
+            icon: const Icon(Icons.home),
+          ),
+        ],
         title: Text(
           '${car.brand} - ${car.name}',
           style: const TextStyle(
@@ -225,7 +239,9 @@ class _CarDetailsState extends State<CarDetails> {
                   ),
                   const SizedBox(height: 8),
                   Expanded(
-                    child: RecommendedCar(recommendedCar: carRecommended),
+                    child: RecommendedCar(
+                      recommendedCar: RecommededService().index(car: car),
+                    ),
                   ),
                   const SizedBox(height: 24),
                   SizedBox(

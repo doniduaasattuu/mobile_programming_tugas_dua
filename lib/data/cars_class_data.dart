@@ -8,5 +8,5 @@ List<Class> carClassData = [
   const Class(name: 'Hatchback'),
   const Class(name: 'Citycar'),
   const Class(name: 'LCGC'),
-  const Class(name: 'Diesel'),
+  const Class(name: 'Supercar'),
 ];

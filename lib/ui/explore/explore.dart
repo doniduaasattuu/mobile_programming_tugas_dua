@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:tugas_dua/data/brands.dart';
+import 'package:tugas_dua/models/car.dart';
+import 'package:tugas_dua/services/car_service.dart';
 import 'package:tugas_dua/ui/cars/cars_class.dart';
+import 'package:tugas_dua/ui/explore/car_explore.dart';
 import 'package:tugas_dua/utility/my_colors.dart';
 import 'package:tugas_dua/utility/my_container.dart';
 
@@ -12,6 +15,10 @@ class Explore extends StatefulWidget {
 }
 
 class _ExploreState extends State<Explore> {
+  List<Car> data = CarService().indexBrands();
+
+  String headerText = 'Most Popular Car';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -55,466 +62,38 @@ class _ExploreState extends State<Explore> {
             const SizedBox(height: 8),
             SizedBox(
               height: 38,
-              child: CarsClass(classData: brands),
-            ),
-            const SizedBox(height: 16),
-            const Text(
-              'Most Popular Car',
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-            ),
-            const SizedBox(height: 16),
-            Expanded(
-              child: ListView(
-                children: [
-                  Row(
-                    children: [
-                      Expanded(
-                        child: Card(
-                          child: Padding(
-                            padding: const EdgeInsets.fromLTRB(16, 8, 16, 16),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                const SizedBox(height: 16),
-                                SizedBox(
-                                  width: double.infinity,
-                                  child: Image.asset(
-                                    'assets/images/xenia.png',
-                                  ),
-                                ),
-                                const SizedBox(height: 16),
-                                const Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Text(
-                                          'Daihatsu',
-                                          style: TextStyle(
-                                            fontWeight: FontWeight.w600,
-                                            fontSize: 16,
-                                          ),
-                                        ),
-                                        Text('Xenia'),
-                                      ],
-                                    ),
-                                    Icon(Icons.arrow_forward_ios_rounded)
-                                  ],
-                                )
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-                      const SizedBox(width: 6),
-                      Expanded(
-                        child: Card(
-                          child: Padding(
-                            // padding: const EdgeInsets.all(16),
-                            padding: const EdgeInsets.fromLTRB(16, 8, 16, 16),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                const SizedBox(height: 16),
-                                SizedBox(
-                                  width: double.infinity,
-                                  child: Image.asset(
-                                    'assets/images/jazz.png',
-                                  ),
-                                ),
-                                const SizedBox(height: 16),
-                                const Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Text(
-                                          'Honda',
-                                          style: TextStyle(
-                                            fontWeight: FontWeight.w600,
-                                            fontSize: 16,
-                                          ),
-                                        ),
-                                        Text('Jazz'),
-                                      ],
-                                    ),
-                                    Icon(Icons.arrow_forward_ios_rounded)
-                                  ],
-                                )
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(height: 6),
-                  // DUA
-                  Row(
-                    children: [
-                      Expanded(
-                        child: Card(
-                          child: Padding(
-                            padding: const EdgeInsets.fromLTRB(16, 8, 16, 16),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                const SizedBox(height: 16),
-                                SizedBox(
-                                  width: double.infinity,
-                                  child: Image.asset(
-                                    'assets/images/mobilio.png',
-                                  ),
-                                ),
-                                const SizedBox(height: 16),
-                                const Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Text(
-                                          'Honda',
-                                          style: TextStyle(
-                                            fontWeight: FontWeight.w600,
-                                            fontSize: 16,
-                                          ),
-                                        ),
-                                        Text('mobilio'),
-                                      ],
-                                    ),
-                                    Icon(Icons.arrow_forward_ios_rounded)
-                                  ],
-                                )
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-                      const SizedBox(width: 6),
-                      Expanded(
-                        child: Card(
-                          child: Padding(
-                            // padding: const EdgeInsets.all(16),
-                            padding: const EdgeInsets.fromLTRB(16, 8, 16, 16),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                const SizedBox(height: 16),
-                                SizedBox(
-                                  width: double.infinity,
-                                  child: Image.asset(
-                                    'assets/images/xpander.png',
-                                  ),
-                                ),
-                                const SizedBox(height: 16),
-                                const Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Text(
-                                          'Mitsubishi',
-                                          style: TextStyle(
-                                            fontWeight: FontWeight.w600,
-                                            fontSize: 16,
-                                          ),
-                                        ),
-                                        Text('Expander'),
-                                      ],
-                                    ),
-                                    Icon(Icons.arrow_forward_ios_rounded)
-                                  ],
-                                )
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(height: 6),
-                  // DUA
-                  Row(
-                    children: [
-                      Expanded(
-                        child: Card(
-                          child: Padding(
-                            padding: const EdgeInsets.fromLTRB(16, 8, 16, 16),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                const SizedBox(height: 16),
-                                SizedBox(
-                                  width: double.infinity,
-                                  child: Image.asset(
-                                    'assets/images/ertiga.png',
-                                  ),
-                                ),
-                                const SizedBox(height: 16),
-                                const Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Text(
-                                          'Suzuki',
-                                          style: TextStyle(
-                                            fontWeight: FontWeight.w600,
-                                            fontSize: 16,
-                                          ),
-                                        ),
-                                        Text('Ertiga'),
-                                      ],
-                                    ),
-                                    Icon(Icons.arrow_forward_ios_rounded)
-                                  ],
-                                )
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-                      const SizedBox(width: 6),
-                      Expanded(
-                        child: Card(
-                          child: Padding(
-                            // padding: const EdgeInsets.all(16),
-                            padding: const EdgeInsets.fromLTRB(16, 8, 16, 16),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                const SizedBox(height: 16),
-                                SizedBox(
-                                  width: double.infinity,
-                                  child: Image.asset(
-                                    'assets/images/brio.png',
-                                  ),
-                                ),
-                                const SizedBox(height: 16),
-                                const Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Text(
-                                          'Honda',
-                                          style: TextStyle(
-                                            fontWeight: FontWeight.w600,
-                                            fontSize: 16,
-                                          ),
-                                        ),
-                                        Text('Brio'),
-                                      ],
-                                    ),
-                                    Icon(Icons.arrow_forward_ios_rounded)
-                                  ],
-                                )
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
+              child: CarsClass(
+                classData: brands,
+                onPressed: (index) {
+                  final String brand = brands[index].name;
 
-                  const SizedBox(width: 6),
-                  Row(
-                    children: [
-                      Expanded(
-                        child: Card(
-                          child: Padding(
-                            padding: const EdgeInsets.fromLTRB(16, 8, 16, 16),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                const SizedBox(height: 16),
-                                SizedBox(
-                                  width: double.infinity,
-                                  child: Image.asset(
-                                    'assets/images/almaz.png',
-                                  ),
-                                ),
-                                const SizedBox(height: 16),
-                                const Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Text(
-                                          'Wuling',
-                                          style: TextStyle(
-                                            fontWeight: FontWeight.w600,
-                                            fontSize: 16,
-                                          ),
-                                        ),
-                                        Text('Almaz'),
-                                      ],
-                                    ),
-                                    Icon(Icons.arrow_forward_ios_rounded)
-                                  ],
-                                )
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-                      const SizedBox(width: 6),
-                      Expanded(
-                        child: Card(
-                          child: Padding(
-                            // padding: const EdgeInsets.all(16),
-                            padding: const EdgeInsets.fromLTRB(16, 8, 16, 16),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                const SizedBox(height: 16),
-                                SizedBox(
-                                  width: double.infinity,
-                                  child: Image.asset(
-                                    'assets/images/wrx.png',
-                                  ),
-                                ),
-                                const SizedBox(height: 16),
-                                const Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Text(
-                                          'Subaru',
-                                          style: TextStyle(
-                                            fontWeight: FontWeight.w600,
-                                            fontSize: 16,
-                                          ),
-                                        ),
-                                        Text('WRX'),
-                                      ],
-                                    ),
-                                    Icon(Icons.arrow_forward_ios_rounded)
-                                  ],
-                                )
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(width: 6),
-                  Row(
-                    children: [
-                      Expanded(
-                        child: Card(
-                          child: Padding(
-                            padding: const EdgeInsets.fromLTRB(16, 8, 16, 16),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                const SizedBox(height: 16),
-                                SizedBox(
-                                  width: double.infinity,
-                                  child: Image.asset(
-                                    'assets/images/pajero.png',
-                                  ),
-                                ),
-                                const SizedBox(height: 16),
-                                const Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Text(
-                                          'Mitsubishi',
-                                          style: TextStyle(
-                                            fontWeight: FontWeight.w600,
-                                            fontSize: 16,
-                                          ),
-                                        ),
-                                        Text('Pajero Sport'),
-                                      ],
-                                    ),
-                                    Icon(Icons.arrow_forward_ios_rounded)
-                                  ],
-                                )
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-                      const SizedBox(width: 6),
-                      Expanded(
-                        child: Card(
-                          child: Padding(
-                            // padding: const EdgeInsets.all(16),
-                            padding: const EdgeInsets.fromLTRB(16, 8, 16, 16),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                const SizedBox(height: 16),
-                                SizedBox(
-                                  width: double.infinity,
-                                  child: Image.asset(
-                                    'assets/images/xl7.png',
-                                  ),
-                                ),
-                                const SizedBox(height: 16),
-                                const Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Text(
-                                          'Suzuki',
-                                          style: TextStyle(
-                                            fontWeight: FontWeight.w600,
-                                            fontSize: 16,
-                                          ),
-                                        ),
-                                        Text('XL7'),
-                                      ],
-                                    ),
-                                    Icon(Icons.arrow_forward_ios_rounded)
-                                  ],
-                                )
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
+                  if (brand != 'All') {
+                    setState(() {
+                      headerText = 'Available';
+                      data = CarService().indexBrands(brand: brand);
+                    });
+                  } else {
+                    setState(() {
+                      headerText = 'Most Popular Car';
+                      data = CarService().indexBrands();
+                    });
+                  }
+                },
               ),
+            ),
+            const SizedBox(height: 16),
+            Column(
+              children: [
+                Text(
+                  headerText,
+                  style: const TextStyle(
+                      fontSize: 18, fontWeight: FontWeight.bold),
+                ),
+                const SizedBox(height: 16),
+              ],
+            ),
+            Expanded(
+              child: CarExplore(cars: data),
             ),
           ],
         ),

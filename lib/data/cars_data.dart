@@ -1,3 +1,5 @@
+// DEPRECATED
+
 import 'package:tugas_dua/models/car.dart';
 
 List<Car> carsData = [

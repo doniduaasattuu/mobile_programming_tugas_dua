@@ -3,6 +3,17 @@ enum Transmission {
   automatic,
 }
 
+enum Category {
+  all,
+  ev,
+  suv,
+  mpv,
+  hatchback,
+  citycar,
+  lcgc,
+  supercar,
+}
+
 class Car {
   const Car({
     required this.brand,
@@ -16,6 +27,8 @@ class Car {
     required this.seat,
     required this.engine,
     required this.baggage,
+    this.category,
+    this.recommended,
   });
 
   final String brand;
@@ -29,4 +42,6 @@ class Car {
   final String seat;
   final String engine;
   final String baggage;
+  final Category? category;
+  final bool? recommended;
 }

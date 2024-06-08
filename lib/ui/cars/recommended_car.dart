@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tugas_dua/models/car.dart';
+import 'package:tugas_dua/ui/cars/car_details.dart';
 
 class RecommendedCar extends StatefulWidget {
   const RecommendedCar({super.key, required this.recommendedCar});
@@ -22,18 +23,30 @@ class _RecommendedCar extends State<RecommendedCar> {
       itemBuilder: (ctx, index) => Card(
         surfaceTintColor: Colors.orange,
         child: Padding(
-          padding: const EdgeInsets.all(16),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              Image.asset(
-                recommendedCar[index].image,
-                width: 130,
-              ),
-              const SizedBox(height: 16),
-              Text(recommendedCar[index].name),
-            ],
+          padding: const EdgeInsets.all(8),
+          child: GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (ctx) => CarDetails(
+                    car: recommendedCar[index],
+                  ),
+                ),
+              );
+            },
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Image.asset(
+                  recommendedCar[index].image,
+                  width: 120,
+                ),
+                const SizedBox(height: 4),
+                Text(recommendedCar[index].name),
+              ],
+            ),
           ),
         ),
       ),

@@ -11,7 +11,7 @@ class MyContainer extends StatelessWidget {
     return Scaffold(
       body: Container(
         padding: const EdgeInsets.fromLTRB(16, 24, 16, 24),
-        child: child,
+        child: SafeArea(child: child),
       ),
     );
   }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tugas_dua/data/cars_class_data.dart';
-import 'package:tugas_dua/data/cars_data.dart';
+import 'package:tugas_dua/models/car.dart';
+import 'package:tugas_dua/services/car_service.dart';
 import 'package:tugas_dua/ui/cars/cars_class.dart';
 import 'package:tugas_dua/ui/cars/cars_list.dart';
 import 'package:tugas_dua/utility/my_colors.dart';
@@ -14,6 +15,7 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  List<Car> data = CarService().indexCategory();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -61,12 +63,26 @@ class _HomeState extends State<Home> {
             const SizedBox(height: 10),
             SizedBox(
               height: 38,
-              child: CarsClass(classData: carClassData),
+              child: CarsClass(
+                classData: carClassData,
+                onPressed: (index) {
+                  if (Category.values[index] != Category.all) {
+                    setState(() {
+                      Category category = Category.values[index];
+                      data = CarService().indexCategory(category: category);
+                    });
+                  } else {
+                    setState(() {
+                      data = CarService().indexCategory();
+                    });
+                  }
+                },
+              ),
             ),
             const SizedBox(height: 20),
             Expanded(
               // flex: 14,
-              child: CarsList(carsData: carsData),
+              child: CarsList(carsData: data),
             ),
           ],
         ),

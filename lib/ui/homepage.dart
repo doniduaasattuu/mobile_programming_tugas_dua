@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:tugas_dua/ui/explore/explore.dart';
 import 'package:tugas_dua/ui/home/home.dart';
+import 'package:tugas_dua/ui/profile/profile.dart';
+import 'package:tugas_dua/ui/rent/rent.dart';
 
 class Homepage extends StatefulWidget {
   const Homepage({super.key});
@@ -17,12 +19,8 @@ class _HomepageState extends State<Homepage> {
       body: <Widget>[
         const Home(),
         const Explore(),
-        const Center(
-          child: Text('Hello rental'),
-        ),
-        const Center(
-          child: Text('Hello profile'),
-        ),
+        const Rent(),
+        const Profile(),
       ][currentPageIndex],
       bottomNavigationBar: NavigationBar(
         onDestinationSelected: (index) {

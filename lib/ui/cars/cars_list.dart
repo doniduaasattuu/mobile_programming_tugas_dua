@@ -60,31 +60,11 @@ class _CarsListState extends State<CarsList> {
                             );
                           },
                           style: ElevatedButton.styleFrom(
-                            // shape: const RoundedRectangleBorder(
-                            //   borderRadius: BorderRadius.all(
-                            //     Radius.circular(50),
-                            //   ),
-                            // ),
                             backgroundColor: carsData[index].electric
                                 ? MyColors().twitter
                                 : MyColors().teal,
                           ),
                           child: Row(
-                            // children: [
-                            //   const Icon(
-                            //     Icons.energy_savings_leaf,
-                            //     color: Colors.lightGreen,
-                            //   ),
-                            //   const SizedBox(width: 10),
-                            //   Text(
-                            //     carsData[index].dailyRent,
-                            //     style: TextStyle(
-                            //       color: MyColors().light,
-                            //       fontWeight: FontWeight.bold,
-                            //     ),
-                            //   ),
-                            // ],
-
                             children: carsData[index].electric
                                 ? [
                                     const Icon(
@@ -122,60 +102,5 @@ class _CarsListState extends State<CarsList> {
                 ),
               ),
             ));
-
-    // return ListView(
-    //   children: [
-    //     Card(
-    //       shape: RoundedRectangleBorder(
-    //         borderRadius: BorderRadius.all(
-    //           Radius.circular(16),
-    //         ),
-    //       ),
-    //       color: Colors.white,
-    //       child: Padding(
-    //         padding: EdgeInsets.all(24),
-    //         child: Row(
-    //           children: [
-    //             Column(
-    //               crossAxisAlignment: CrossAxisAlignment.start,
-    //               children: [
-    //                 Column(
-    //                   crossAxisAlignment: CrossAxisAlignment.start,
-    //                   children: [
-    //                     Text(
-    //                       'Toyota',
-    //                       style: TextStyle(
-    //                           fontWeight: FontWeight.bold, fontSize: 18),
-    //                     ),
-    //                     Text('Avanza 1.5'),
-    //                   ],
-    //                 ),
-    //                 const SizedBox(height: 20),
-    //                 ElevatedButton(
-    //                   onPressed: () {},
-    //                   child: Text(
-    //                     '298rb/day',
-    //                     style: TextStyle(color: MyColors().light),
-    //                   ),
-    //                   style: ElevatedButton.styleFrom(
-    //                     shape: RoundedRectangleBorder(
-    //                       borderRadius: BorderRadius.all(
-    //                         Radius.circular(12),
-    //                       ),
-    //                     ),
-    //                     backgroundColor: MyColors().success,
-    //                   ),
-    //                 ),
-    //               ],
-    //             ),
-    //             Spacer(),
-    //             Image.asset('assets/images/veloz.png'),
-    //           ],
-    //         ),
-    //       ),
-    //     ),
-    //   ],
-    // );
-    // END
   }
 }
