@@ -27,4 +27,8 @@ class CarService {
       }).toList();
     }
   }
+
+  Car carByName(String name) {
+    return cars.where((car) => car.name == name).toList()[0];
+  }
 }

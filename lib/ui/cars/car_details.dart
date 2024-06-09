@@ -26,9 +26,13 @@ class _CarDetailsState extends State<CarDetails> {
             // const Text('Book Car'),
             const Icon(Icons.drag_handle_rounded),
             TextField(
+              keyboardType: TextInputType.none,
               onTap: () {
                 DateTime now = DateTime.now();
-                showDatePicker(context: context, firstDate: now, lastDate: now);
+                showDatePicker(
+                    context: context,
+                    firstDate: now,
+                    lastDate: DateTime(now.year, now.month, now.day + 1));
               },
               decoration: const InputDecoration(
                 label: Text('Pickup date'),
@@ -37,22 +41,23 @@ class _CarDetailsState extends State<CarDetails> {
             ),
             const SizedBox(height: 20),
             TextField(
+              keyboardType: TextInputType.none,
               onTap: () {
                 DateTime now = DateTime.now();
-                showDatePicker(context: context, firstDate: now, lastDate: now);
+                showDatePicker(
+                    context: context,
+                    firstDate: now,
+                    lastDate: DateTime(now.year, now.month + 1, now.day));
               },
               decoration: const InputDecoration(
-                label: Text('Pickup date'),
+                label: Text('Drop off date'),
                 suffixIcon: Icon(Icons.calendar_month),
               ),
             ),
             const SizedBox(height: 30),
-            TextField(
-              onTap: () {
-                DateTime now = DateTime.now();
-                showDatePicker(context: context, firstDate: now, lastDate: now);
-              },
-              decoration: const InputDecoration(
+            const TextField(
+              keyboardType: TextInputType.none,
+              decoration: InputDecoration(
                 label: Text('Payment method'),
               ),
             ),
@@ -215,7 +220,7 @@ class _CarDetailsState extends State<CarDetails> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const SizedBox(height: 20),
+                  const SizedBox(height: 10),
                   const Text(
                     'Description',
                     style: TextStyle(

@@ -41,9 +41,9 @@ class _RecommendedCar extends State<RecommendedCar> {
               children: [
                 Image.asset(
                   recommendedCar[index].image,
-                  width: 120,
+                  height: 60,
                 ),
-                const SizedBox(height: 4),
+                // const SizedBox(height: 4),
                 Text(recommendedCar[index].name),
               ],
             ),
