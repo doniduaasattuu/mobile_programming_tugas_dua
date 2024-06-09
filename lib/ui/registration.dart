@@ -90,7 +90,7 @@ class _RegistrationState extends State<Registration> {
                         ElevatedButton(
                           onPressed: () {},
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: MyColors().info,
+                            backgroundColor: MyColors().success,
                           ),
                           child: Text(
                             'Sign In',
